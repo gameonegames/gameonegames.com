@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GameOne Games</title>
+<meta name="description" content="GameOne Games is an independent game studio.">
+<meta property="og:title" content="GameOne Games">
+<meta property="og:description" content="An independent game studio based in Southern California.">
+<meta property="og:image" content="assets/img/title_night_watch.jpg">
+<meta name="theme-color" content="#0b0a12">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/Archivo-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="./" aria-label="GameOne Games home">Game<span class="one">One</span> Games</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#games">Games</a>
+      <a href="hallow-heck/">Hallow Heck</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="home-hero" aria-labelledby="hero-title">
+    <div class="hero-art">
+      <img src="assets/img/title_night_watch.jpg" alt="Hallow Heck title art: Huxley Heck, Circe Cirila and Morgan Magisty on a moonlit street in Weeping Willow." width="1672" height="941">
+    </div>
+    <div class="wrap hero-text">
+      <h1 id="hero-title" class="sr-only">Hallow Heck</h1>
+      <p class="pitch">On Hallow's Eve, Huxley Heck, supernatural hunter, fights through a town seized by monsters, searching for a magical book that may hold the answers to his family's curse.</p>
+      <div class="actions">
+        <a class="btn" href="hallow-heck/">Explore Hallow Heck</a>
+      </div>
+      <p class="note">Coming to iPhone, iPad, Mac, Apple TV, Android, and Steam.</p>
+    </div>
+  </section>
+
+  <section class="section" id="games" aria-labelledby="games-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="games-title">Our games</h2>
+      </div>
+      <div class="games">
+        <a class="game-card featured" href="hallow-heck/">
+          <div class="art"><img src="assets/img/title_between_worlds.jpg" alt="Hauntly Hux, glowing with spectral flame, in front of a moonlit cathedral" loading="lazy" width="1672" height="941"></div>
+          <div class="body">
+            <h3>Hallow Heck</h3>
+            <p>A 2D action-platformer. Play as Huxley Heck, surviving the town of Weeping Willow on Hallow's Eve.</p>
+          </div>
+        </a>
+        <div class="game-card soon">
+          <div class="art" aria-hidden="true"><span>?</span></div>
+          <div class="body">
+            <h3>Untitled project</h3>
+            <p>Our next game. More when it's ready to show.</p>
+          </div>
+        </div>
+        <div class="game-card soon">
+          <div class="art" aria-hidden="true"><span>?</span></div>
+          <div class="body">
+            <span class="chip">Coming soon</span>
+            <h3>Untitled project</h3>
+            <p>Another world in the works. Stay tuned.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-title">
+    <div class="wrap about">
+      <div class="read">
+        <span class="eyebrow">About the studio</span>
+        <p style="margin-top: 18px;">GameOne Games is an independent studio run by Waverly Hampton III. We make story-driven and playful games fun for all.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Studio</dt><dd>GameOne Games</dd></div>
+        <div><dt>Founder</dt><dd>Waverly Hampton III</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap read">
+      <span class="eyebrow">Contact</span>
+      <h2 id="contact-title" style="font-family: var(--studio); font-weight: 800; font-size: clamp(30px, 4vw, 44px); margin-top: 10px;">Say hello</h2>
+      <p style="margin-top: 14px;" class="muted">Press, partners and players: write to us.</p>
+      <div class="contact-box">
+        <code id="email">waverlyhampton3@icloud.com</code>
+        <button type="button" data-copy="email">Copy email</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="row"><span>© 2026 GameOne Games. All rights reserved.</span><a href="hallow-heck/">Hallow Heck</a></div>
+    <span>Hallow Heck and all related characters, artwork and materials are the property of Waverly Hampton III. Apple, iPhone, iPad, Mac and Apple TV are trademarks of Apple Inc. Android is a trademark of Google. Steam is a trademark of Steam.</span>
+  </div>
+</footer>
+
+<script>
+  // Copy the email address (falls back to selecting it).
+  document.querySelectorAll("[data-copy]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var el = document.getElementById(button.dataset.copy);
+      var text = el.textContent.trim();
+      var done = function () { button.textContent = "Copied"; setTimeout(function () { button.textContent = "Copy email"; }, 1600); };
+      var select = function () { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+      if (navigator.clipboard) { navigator.clipboard.writeText(text).then(done, select); } else { select(); }
+    });
+  });
+</script>
+</body>
+</html>

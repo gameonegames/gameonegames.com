@@ -1,0 +1,18 @@
+/* Policy reading layout; isolated from the existing marketing pages. */
+.privacy { max-width: 850px; padding-top: clamp(36px, 6vw, 76px); font-size: 17px; line-height: 1.75; }
+.privacy h1 { font: 800 clamp(34px, 6vw, 56px)/1.15 var(--studio); margin: 12px 0 18px; }
+.privacy h2 { font: 600 clamp(21px, 3vw, 26px)/1.35 var(--studio); margin: 0 0 14px; }
+.privacy p + p { margin-top: 16px; }
+.privacy .updated { color: var(--mist); font-size: 14px; margin-bottom: 24px; }
+.privacy section { margin-top: 38px; scroll-margin-top: 110px; }
+.privacy a { color: var(--spectral); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.privacy-summary { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--ember); border-radius: 6px; padding: 24px; margin: 32px 0; }
+.privacy-summary ul { padding-left: 22px; margin: 0; }
+.privacy-summary li + li { margin-top: 10px; }
+@media print {
+  .site-head, .site-foot, .skip { display: none; }
+  body { background: white; color: black; }
+  .privacy { max-width: none; padding: 0; font-size: 11pt; }
+  .privacy a, .privacy .updated { color: black; }
+  .privacy-summary { background: white; border-color: #555; }
+}

@@ -35,7 +35,7 @@
       <h2>At a glance</h2>
       <ul>
         <li>No GameOne Games account is required to play.</li>
-        <li>Game progress and preferences are stored on your device. The game does not upload your save files to a GameOne Games server.</li>
+        <li>Game progress is saved on your device. Apple builds with iCloud Saves also synchronize progression through your private iCloud database. Preferences remain device-specific; saves are not uploaded to a GameOne Games server.</li>
         <li>The game contains no advertising or third-party advertising or analytics SDKs. We do not sell personal information or share it for cross-context behavioral advertising.</li>
         <li>Apple handles App Store purchases and Game Center. GitHub hosts this website. Emailing support shares your message and email address with us.</li>
       </ul>
@@ -44,14 +44,16 @@
     <section aria-labelledby="game-data">
       <h2 id="game-data">1. Information used by the game</h2>
       <p><em>Hallow Heck</em> stores progress, save slots, checkpoints, discoveries, results and settings locally so you can continue playing and keep your preferences. It also keeps a local record of whether the full game is unlocked and checks purchase entitlement through Apple. Local save recovery may retain a previous valid save on the same device.</p>
-      <p>The game does not request your contacts, precise location, camera or microphone. It does not send gameplay telemetry to a GameOne Games server. Local game saves are not currently synchronized across devices by the game; any device backup or restore is governed by your device and Apple settings.</p>
+      <p>The game does not request your contacts, precise location, camera or microphone. It does not send gameplay telemetry to a GameOne Games server. Device backups and restores are governed by your device and Apple settings. Cloud-save availability depends on the game version and your iCloud account; older builds may store progress only locally.</p>
     </section>
     <section aria-labelledby="apple-services">
       <h2 id="apple-services">2. Apple purchases and Game Center</h2>
       <p><strong>Purchases.</strong> Apple processes payments. The game uses Apple's StoreKit service to read product and verified transaction information, unlock purchased content, restore purchases and recognize refunds or revoked entitlements. We do not receive your payment-card details from the game. Apple may provide developers with sales and financial reports through its developer services.</p>
+      <p><strong>iCloud Saves.</strong> In Apple builds that support this feature, the game uses Apple CloudKit to synchronize three Story save slots, checkpoints and progression, discoveries, campaign completion and Hallow Haunts records between your Apple devices signed in to the same iCloud account. The game keeps a local copy for offline play and uploads changes when connectivity returns. Device settings, purchases, Explore sessions and unfinished Hallow Haunts runs are not part of the cloud-save payload. Other platform versions use local saves.</p>
+      <p>Cloud progress is stored in your private CloudKit database. It includes save revision identifiers, update times and a general device category (such as Mac or Apple TV), rather than your personal device name. A hash of an app-specific iCloud user identifier separates local account caches. The game does not receive your Apple Account email or password. GameOne Games does not operate a separate save server or access your private save records through the developer console. Conflicting saves require a choice rather than automatically replacing one version based on its timestamp.</p>
       <p><strong>Game Center.</strong> If you sign in to Game Center, the game uses Apple's GameKit service to read and report achievement progress. It uses a game-specific player identifier to associate achievement reporting with the signed-in player. Your Game Center profile and activity visibility are controlled through Apple's settings; playing does not require a GameOne Games account.</p>
       <p><strong>Diagnostics.</strong> Apple may provide us with app usage statistics or crash diagnostics under its services and your applicable sharing choices, including different arrangements for TestFlight testing. We use any such reports to understand and fix reliability problems. We have not added a separate analytics or crash-reporting SDK to the game.</p>
-      <p>For Apple's handling of this information, see <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>, <a href="https://www.apple.com/legal/privacy/data/en/game-center/">Game Center &amp; Privacy</a> and <a href="https://www.apple.com/legal/privacy/data/en/app-analytics/">App Analytics &amp; Privacy</a>.</p>
+      <p>For Apple's handling of this information, see <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>, <a href="https://www.apple.com/legal/privacy/data/en/icloud/">iCloud &amp; Privacy</a>, <a href="https://www.apple.com/legal/privacy/data/en/game-center/">Game Center &amp; Privacy</a> and <a href="https://www.apple.com/legal/privacy/data/en/app-analytics/">App Analytics &amp; Privacy</a>.</p>
     </section>
     <section aria-labelledby="support">
       <h2 id="support">3. When you contact support</h2>
@@ -70,7 +72,8 @@
     </section>
     <section aria-labelledby="retention">
       <h2 id="retention">6. Retention and your choices</h2>
-      <p>Local saves and settings remain on your device until overwritten, removed through available game or device controls, or removed by the operating system. Removing the app and its associated local data does not delete Apple's purchase history, Game Center records or separate device backups.</p>
+      <p>Local saves and settings remain on your device until overwritten, removed through available game or device controls, or removed by the operating system. Removing the app and its associated local data does not delete your iCloud saves, Apple's purchase history, Game Center records or separate device backups.</p>
+      <p>Cloud saves retain up to 12 recent recovery versions. Separate local recovery files and earlier account caches may remain until the app's local data is removed; signing out does not delete them. You can manage or remove the game's iCloud data through Apple's iCloud storage settings. Stop cloud syncing on all devices before removing data you do not want uploaded again. Offline changes may otherwise upload when a device reconnects. CloudKit storage and retention are also subject to Apple's services and your account settings.</p>
       <p>We keep support correspondence and any diagnostic information we retain for as long as reasonably needed to resolve issues, maintain relevant records or comply with legal obligations, then delete it when no longer needed. Apple and GitHub control retention of information they handle under their own policies.</p>
       <p>You can manage Game Center, purchase history and diagnostic-sharing choices through Apple's services and device settings. Depending on where you live, you may have rights to access, correct or delete personal information we hold, obtain a copy, or restrict or object to certain uses. Email us to make a request. We may need to verify your identity; we will respond in accordance with applicable law. You may also have the right to complain to your local data-protection authority.</p>
     </section>
